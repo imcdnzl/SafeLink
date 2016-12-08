@@ -8,9 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox HorizontalAlignment="Left" Margin="56,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="311"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="160,187,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="56,260,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="311"/>
+        <TextBox HorizontalAlignment="Left" Margin="56,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311"/>
+        <Button Content="Go" HorizontalAlignment="Left" Margin="160,187,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="56,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,75,0,0" TextWrapping="Wrap" Text="Enter URL to convert" VerticalAlignment="Top" Width="265"/>
 
     </Grid>
 </Page>
