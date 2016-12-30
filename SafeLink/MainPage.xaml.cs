@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
+using System.Net;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -29,7 +31,14 @@ namespace SafeLink
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Result.Text = URL.Text;
+            Regex regex = new Regex(@"^https://\w+\.safelinks\.protection\.outlook\.com/\?url=(.*)&data=02|01|", RegexOptions.IgnoreCase);
+            string UrlString = WebUtility.UrlDecode(URL.Text);
+            var match = regex.Match(UrlString);
+            if (match.Success && match.Groups.Count > 1 && match.Groups[1].Success) {
+                Result.Text = match.Groups[1].Value;
+            } else {
+                Result.Text = "failed";
+            }
         }
     }
 }
